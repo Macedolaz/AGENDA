@@ -2,31 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#fed7aa"
+    android:background="#FDFCFC"
     android:orientation="vertical"
     tools:context="com.example.exemplofragmento.Fragmento1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/buttonA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hoje"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="100dp"
+            android:text="Hoje" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Outra Data"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:text="Outra Data" />
     </LinearLayout>
 
     <ScrollView
@@ -37,13 +37,11 @@
             android:id="@+id/texto_frg2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
             android:hint="Compromissos"
-            android:padding="16dp"/>
+            android:padding="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
     </ScrollView>
-
-
 
 
 </LinearLayout>

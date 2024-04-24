@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-
-import org.w3c.dom.Text;
 
 // Repositório com exemplo de Fragmentos estáticos
 
@@ -34,26 +31,26 @@ public class Fragmento1 extends Fragment {
                              Bundle savedInstanceState) {
         // Infla o layout para este fragmento
         // Recupera uma "View v" para acessar as propriedades e métodos do fragmento
-        v = inflater.inflate(R.layout.fragmento1, container, false);
+        V = inflater.inflate(R.layout.fragmento1, container, false);
 
 
 
-        BotaoA = (Button) v.findViewById(R.id.button1);
+        BotaoA = (Button) V.findViewById(R.id.buttonA);
         BotaoA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("prints", "botao 1");
+                Log.d("prints", "botao A");
                 DialogFragment fragmentoData = new FragmentoDatePicker();
                 fragmentoData.show(getParentFragmentManager(), "datePicker");
 
             }
         });
 
-        BotaoB = (Button) v.findViewById(R.id.button2);
+        BotaoB = (Button) V.findViewById(R.id.buttonB);
         BotaoB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("prints", "botao 2");
+                Log.d("prints", "botao B");
                 DialogFragment fragmentoTime = new FragmentoTimePicker();
                 fragmentoTime.show(getParentFragmentManager(), "timePicker");
                 
@@ -62,11 +59,11 @@ public class Fragmento1 extends Fragment {
 
 
 
-        textoA = (TextView) v.findViewById(R.id.editTextDescription);
+        textoA = (TextView) V.findViewById(R.id.editTextDescription);
         textoA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("prints", "texto 1");
+                Log.d("prints", "texto A");
                 TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
 
 
@@ -74,14 +71,14 @@ public class Fragmento1 extends Fragment {
             }
         });
 
-        BotaoC = (Button) v.findViewById(R.id.button3);
+        BotaoC = (Button) V.findViewById(R.id.buttonC);
         BotaoC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("prints", "botao 3");
+                Log.d("prints", "botao C");
                 TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
                 if (txt != null) txt.setText(
-                        String.valueOf(texto1.getText())
+                        String.valueOf(textoA.getText())
                 );
             }
         });
