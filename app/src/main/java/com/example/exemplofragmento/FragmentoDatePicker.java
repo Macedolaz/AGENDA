@@ -2,8 +2,10 @@ package com.example.exemplofragmento;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
@@ -13,7 +15,8 @@ import java.util.Calendar;
 
 public class FragmentoDatePicker extends DialogFragment implements DatePickerDialog.OnDateSetListener {
     int dia, mes, ano;
-
+    String data;
+    private View V;
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -33,10 +36,14 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
         ano = year;
 
         TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
-        if (txt != null) txt.setText(
-                String.valueOf(dia) +
-                        "/" + String.valueOf(mes) +
-                        "/" + String.valueOf(ano)
+        if (txt != null)
+            data = String.valueOf(dia) +
+                    "/" + String.valueOf(mes) +
+                    "/" + String.valueOf(ano);
+        txt.setText("");
+        txt.setTextColor(Color.argb(0,0,0,0));
+
+        Log.d("prints", "Data: " + data);
         );
     }
 
